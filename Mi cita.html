@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Cita - Dra. [Tu Nombre]</title>
+    <title>Mi Cita - Dra. Corniel</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     
     <style>
@@ -76,7 +76,8 @@
             color: #333;
         }
 
-        .widget input {
+        .widget input,
+        .widget select {
             width: 100%;
             padding: 15px;
             border-radius: 5px;
@@ -221,6 +222,25 @@
                 </div>
             </div>
 
+            <!-- Selección de Pago -->
+            <div class="details-section">
+                <h3>Opciones de Pago</h3>
+                <div class="widget">
+                    <label for="paymentMethod">Selecciona tu banco:</label>
+                    <select id="paymentMethod" onchange="redirectToBank()">
+                        <option value="">Selecciona una opción</option>
+                        <option value="https://www.popularenlinea.com/Personas/BancaDigital/BancaEnLinea/Paginas/Transferencias.aspx">Banco Popular</option>
+                        <option value="https://www.banreservas.com.do/personas/canales/banreservas-en-linea/transferencias">BanReservas</option>
+                        <option value="https://www.bhdleon.com.do/personas/canales-digitales/bhdleon-virtual">Banco BHD</option>
+                    </select>
+                </div>
+                <div class="widget">
+                    <label for="transactionId">Número de Transacción:</label>
+                    <input type="text" id="transactionId" placeholder="Ingresa el número de transacción">
+                </div>
+                <button id="confirmPayment" class="zoom-button">Confirmar Pago</button>
+            </div>
+
             <!-- Información Adicional -->
             <div class="info-section">
                 <h3>Instrucciones para la Cita</h3>
@@ -234,7 +254,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Dra. [Tu Nombre]. Todos los derechos reservados.</p>
+                <p>&copy; 2024 Dra. Corniel. Todos los derechos reservados.</p>
                 <nav>
                     <ul>
                         <li><a href="privacy-policy.html">Política de Privacidad</a></li>
@@ -245,7 +265,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript para obtener datos de Airtable -->
+    <!-- JavaScript para obtener datos de Airtable y manejar el pago -->
     <script>
         document.getElementById('loadAppointment').addEventListener('click', function() {
             const apiKey = 'tu_api_key_de_airtable';
@@ -275,6 +295,25 @@
             .catch(error => {
                 console.error('Error al obtener los datos de Airtable:', error);
             });
+        });
+
+        function redirectToBank() {
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            if (paymentMethod) {
+                window.open(paymentMethod, '_blank');
+            }
+        }
+
+        document.getElementById('confirmPayment').addEventListener('click', function() {
+            const transactionId = document.getElementById('transactionId').value;
+
+            if (!transactionId) {
+                alert('Por favor, ingresa el número de transacción.');
+                return;
+            }
+
+            alert('Pago confirmado exitosamente. Tu cita ha sido reservada.');
+            // Aquí puedes agregar la lógica para guardar la información de la cita como confirmada
         });
     </script>
 </body>

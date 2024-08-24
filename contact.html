@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Dra. [Tu Nombre]</title>
+    <title>Contacto - Dra. Corniel</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     
     <style>
@@ -78,15 +78,21 @@
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
         }
 
+        /* Hacer que todos los campos tengan el mismo tamaño */
         .contact-form input,
-        .contact-form textarea {
+        .contact-form textarea,
+        .contact-form button {
             width: 100%;
+            max-width: 100%;
             padding: 15px;
-            margin-bottom: 20px;
             border-radius: 5px;
             border: 1px solid #e0e0e0;
             font-family: 'Poppins', sans-serif;
             font-size: 1em;
+            background-color: #f9f9fb;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+            box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho */
+            margin-bottom: 20px;
         }
 
         .contact-form textarea {
@@ -94,17 +100,20 @@
             min-height: 150px;
         }
 
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            box-shadow: 0px 0px 10px #94d2bd;
+            border-color: #94d2bd;
+            outline: none;
+        }
+
         .contact-form button {
             background-color: #94d2bd;
             color: #ffffff;
-            padding: 15px 20px;
             border: none;
-            border-radius: 5px;
-            font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1em;
+            font-weight: 600;
         }
 
         .contact-form button:hover {
@@ -225,7 +234,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Dra. [Tu Nombre]. Todos los derechos reservados.</p>
+                <p>&copy; 2024 Dra. Corniel. Todos los derechos reservados.</p>
                 <nav>
                     <ul>
                         <li><a href="privacy-policy.html">Política de Privacidad</a></li>
