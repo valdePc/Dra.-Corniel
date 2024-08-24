@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dra. Corniel - Atención Médica Integral</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    
+
     <style>
         /* Estilos generales */
         body {
@@ -22,16 +22,28 @@
             margin: 0 auto;
         }
 
+        /* Estilos del Menú Moderno */
         header {
             background-color: #ffffff;
-            padding: 20px 0;
-            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
         }
 
-        header .logo h1 {
+        .logo {
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
             color: #005f73;
+            font-size: 1.8em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
 
         nav ul {
@@ -39,154 +51,291 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: flex-end;
+            align-items: center;
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 30px;
+            position: relative;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #333;
             font-weight: 600;
+            padding: 10px;
+            transition: color 0.3s ease;
+            position: relative;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            color: #007f91;
+        }
+
+        nav ul li a::before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #007f91;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        /* Efecto desplegable */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+            border-radius: 10px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            margin-left: 0;
+            width: 200px;
+            padding: 10px 20px;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            font-weight: 400;
+            color: #555;
+        }
+
+        nav ul li ul li a:hover {
+            color: #007f91;
+            background-color: #f4f4f9;
+        }
+
+        /* Botón de menú para móviles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            background-color: #333;
+            margin: 5px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Animaciones del botón de menú */
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: -100%;
+                flex-direction: column;
+                background-color: #ffffff;
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                transition: left 0.3s ease;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                font-size: 1.2em;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+        }
+
+        /* Estilos de la Hero Section */
+        .hero {
+            background: linear-gradient(45deg, #a8dadc, #007f91);
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn-primary {
             background-color: #94d2bd;
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
         }
 
         .btn-primary:hover {
             background-color: #007f91;
         }
 
-        .hero {
-            background-color: #a8dadc;
-            color: #ffffff;
-            text-align: center;
-            padding: 60px 0;
-        }
-
-        .hero h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
+        /* Sección de servicios destacados */
         .services {
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         .services h2 {
             text-align: center;
             color: #005f73;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            position: relative;
+        }
+
+        .services h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #94d2bd;
+            margin: 20px auto 0;
         }
 
         .service-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 30px;
         }
 
         .service-item {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .service-item img {
-            width: 60px;
+            width: 80px;
             margin-bottom: 20px;
         }
 
         .service-item h3 {
             color: #007f91;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
         }
 
+        .service-item p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        /* Sección de testimonios */
         .testimonials {
             background-color: #edf6f9;
-            padding: 60px 0;
+            padding: 80px 20px;
             text-align: center;
+            border-radius: 10px;
+            margin-top: 50px;
         }
 
         .testimonials h2 {
             color: #007f91;
             margin-bottom: 40px;
-        }
-
-        .testimonial-carousel {
-            display: flex;
-            overflow: hidden;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 2.5em;
             position: relative;
         }
 
-        .testimonial-carousel .testimonial-item {
-            flex: 0 0 25%;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-            opacity: 0.8;
-            transition: transform 0.5s ease, opacity 0.5s ease;
+        .testimonials h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #94d2bd;
+            margin: 20px auto 0;
+        }
+
+        .testimonial-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-item {
             background-color: #ffffff;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin: 0 5px; /* Reduce el margen entre los testimonios */
+            text-align: center;
         }
 
-        .testimonial-carousel .testimonial-item.active {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        .testimonial-carousel .testimonial-item p {
+        .testimonial-item p {
             font-size: 1em;
             color: #555;
             margin-bottom: 10px;
         }
 
-        .testimonial-carousel .testimonial-item h3 {
+        .testimonial-item h3 {
             font-size: 1.2em;
             color: #007f91;
             margin-bottom: 0;
         }
 
-        .testimonial-carousel .testimonial-item span {
+        .testimonial-item span {
             font-size: 0.9em;
             color: #888;
         }
 
-        .controls {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .controls button {
-            background-color: #94d2bd;
-            color: #ffffff;
-            border: none;
-            padding: 10px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .controls button:hover {
-            background-color: #007f91;
-        }
-
         .add-testimonial {
-            margin-top: 40px;
+            margin-top: 50px;
             text-align: center;
         }
 
@@ -194,8 +343,8 @@
         .add-testimonial textarea {
             width: 100%;
             max-width: 500px;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
             border-radius: 5px;
             border: 1px solid #e0e0e0;
         }
@@ -204,7 +353,7 @@
             background-color: #94d2bd;
             color: #ffffff;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -214,23 +363,83 @@
             background-color: #007f91;
         }
 
+        /* Estilos de la sección de llamada a la acción */
+        .cta {
+            background: linear-gradient(45deg, #94d2bd, #007f91);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .cta h2 {
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+
+        .cta a {
+            background-color: #ffffff;
+            color: #007f91;
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta a:hover {
+            background-color: #007f91;
+            color: #ffffff;
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 40px;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer nav ul {
+            display: flex;
+        }
+
+        footer nav ul li {
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado con navegación -->
+    <!-- Encabezado con navegación moderna -->
     <header>
         <div class="container">
-            <div class="logo">
-                <h1>Dra. Corniel</h1>
-            </div>
             <nav>
-                <ul>
+                <div class="logo">Dra. Corniel</div>
+                <div class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="about.html">Sobre Mí</a></li>
                     <li><a href="services.html">Servicios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
+                    <li>
+                        <a href="#">Más</a>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                        </ul>
+                    </li>
                     <li><a href="appointments.html" class="btn-primary">Agendar Cita</a></li>
                 </ul>
             </nav>
@@ -242,7 +451,7 @@
         <div class="container">
             <h2>Atención Médica Personalizada</h2>
             <p>Bienvenido/a a un lugar donde tu salud es nuestra prioridad. Ofrecemos atención médica integral con un enfoque humano y profesional.</p>
-            <a href="reservar_cita.html" class="btn-primary">Reservar Cita</a>
+            <a href="appointments.html" class="btn-primary">Reservar Cita</a>
         </div>
     </section>
 
@@ -274,8 +483,8 @@
     <section class="testimonials">
         <div class="container">
             <h2>Testimonios</h2>
-            <div class="testimonial-carousel">
-                <div class="testimonial-item active">
+            <div class="testimonial-list">
+                <div class="testimonial-item">
                     <p>"La Dra. Corniel me brindó una atención excepcional. Es profesional, dedicada y siempre me sentí en buenas manos."</p>
                     <h3>Juan Pérez</h3>
                     <span>Paciente</span>
@@ -295,10 +504,6 @@
                     <h3>Ana Torres</h3>
                     <span>Paciente</span>
                 </div>
-            </div>
-            <div class="controls">
-                <button id="prev">Anterior</button>
-                <button id="next">Siguiente</button>
             </div>
 
             <!-- Formulario para agregar un nuevo testimonio -->
@@ -336,31 +541,14 @@
     </footer>
 
     <script>
-        // JavaScript para manejar el carrusel de testimonios
-        const testimonials = document.querySelectorAll('.testimonial-item');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-        let currentIndex = 0;
+        // JavaScript para manejar el menú móvil
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
 
-        function showTestimonials() {
-            testimonials.forEach((testimonial, index) => {
-                testimonial.classList.remove('active');
-                testimonial.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
-            });
-            testimonials[currentIndex].classList.add('active');
-        }
-
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % testimonials.length;
-            showTestimonials();
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
-
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-            showTestimonials();
-        });
-
-        showTestimonials();
 
         // JavaScript para agregar un nuevo testimonio
         document.getElementById('addTestimonial').addEventListener('click', () => {
@@ -376,9 +564,7 @@
                     <h3>${name}</h3>
                     <span>${role}</span>
                 `;
-                document.querySelector('.testimonial-carousel').appendChild(newTestimonial);
-                testimonials[currentIndex].classList.add('active');
-                showTestimonials();
+                document.querySelector('.testimonial-list').appendChild(newTestimonial);
                 document.getElementById('name').value = '';
                 document.getElementById('role').value = '';
                 document.getElementById('message').value = '';

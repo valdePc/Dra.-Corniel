@@ -23,16 +23,28 @@
             padding: 20px;
         }
 
+        /* Estilos del Menú Moderno */
         header {
             background-color: #ffffff;
-            padding: 20px 0;
-            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
         }
 
-        header .logo h1 {
+        .logo {
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
             color: #005f73;
+            font-size: 1.8em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
 
         nav ul {
@@ -40,56 +52,187 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: flex-end;
+            align-items: center;
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 30px;
+            position: relative;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #333;
             font-weight: 600;
+            padding: 10px;
+            transition: color 0.3s ease;
+            position: relative;
+            display: block;
         }
 
+        nav ul li a:hover {
+            color: #007f91;
+        }
+
+        nav ul li a::before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #007f91;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        /* Efecto desplegable */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+            border-radius: 10px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            margin-left: 0;
+            width: 200px;
+            padding: 10px 20px;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            font-weight: 400;
+            color: #555;
+        }
+
+        nav ul li ul li a:hover {
+            color: #007f91;
+            background-color: #f4f4f9;
+        }
+
+        /* Botón de menú para móviles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            background-color: #333;
+            margin: 5px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Animaciones del botón de menú */
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: -100%;
+                flex-direction: column;
+                background-color: #ffffff;
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                transition: left 0.3s ease;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                font-size: 1.2em;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+        }
+
+        /* Sección de Servicios */
         .services-section {
-            padding: 60px 0;
+            padding: 80px 20px;
             text-align: center;
         }
 
         .services-section h2 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             color: #007f91;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .services-section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #94d2bd;
+            margin: 20px auto 0;
         }
 
         .service-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 30px;
         }
 
         .service-item {
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s ease;
+            padding: 30px 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
 
         .service-item:hover {
             transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .service-item img {
-            width: 100px;
+            width: 80px;
             margin-bottom: 20px;
         }
 
         .service-item h3 {
             color: #007f91;
             margin-bottom: 15px;
+            font-size: 1.5em;
         }
 
         .service-item p {
@@ -97,10 +240,12 @@
             line-height: 1.6;
         }
 
+        /* Estilos del pie de página */
         footer {
             background-color: #ffffff;
             padding: 20px 0;
             border-top: 1px solid #e0e0e0;
+            margin-top: 40px;
         }
 
         footer .footer-content {
@@ -120,19 +265,27 @@
 </head>
 <body>
 
-    <!-- Encabezado con navegación -->
+    <!-- Encabezado con navegación moderna -->
     <header>
         <div class="container">
-            <div class="logo">
-                <h1>Dra. Corniel</h1>
-            </div>
             <nav>
-                <ul>
+                <div class="logo">Dra. Corniel</div>
+                <div class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="about.html">Sobre Mí</a></li>
                     <li><a href="services.html">Servicios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
+                    <li>
+                        <a href="#">Más</a>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                        </ul>
+                    </li>
                     <li><a href="appointments.html" class="btn-primary">Agendar Cita</a></li>
                 </ul>
             </nav>
@@ -193,5 +346,15 @@
         </div>
     </footer>
 
+    <script>
+        // JavaScript para manejar el menú móvil
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
