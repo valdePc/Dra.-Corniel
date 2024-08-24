@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. [Tu Nombre] - Atención Médica Integral</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        header .logo h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #005f73;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: #94d2bd;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #007f91;
+        }
+
+        .btn-secondary {
+            background-color: #ffb4a2;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ef233c;
+        }
+
+        .hero {
+            background-color: #a8dadc;
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .services {
+            padding: 60px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            color: #005f73;
+            margin-bottom: 40px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item img {
+            width: 60px;
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            color: #007f91;
+            margin-bottom: 10px;
+        }
+
+        .testimonials {
+            background-color: #edf6f9;
+            padding: 60px 0;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            color: #007f91;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial-item {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .testimonial-item span {
+            display: block;
+            margin-top: 10px;
+            color: #005f73;
+        }
+
+        .cta {
+            background-color: #94d2bd;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .cta h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        footer {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer nav ul {
+            display: flex;
+        }
+
+        footer nav ul li {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con navegación -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Dra. Corniel</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Mí</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="appointments.html" class="btn-primary">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de bienvenida -->
+    <section class="hero">
+        <div class="container">
+            <h2>Atención Médica Personalizada</h2>
+            <p>Bienvenido/a a un lugar donde tu salud es nuestra prioridad. Ofrecemos atención médica integral con un enfoque humano y profesional.</p>
+            <li><a href="reservar_cita.html" class="btn-primary">Reservar Cita</a></li>
+
+        </div>
+    </section>
+
+    <!-- Sección de servicios destacados -->
+    <section class="services">
+        <div class="container">
+            <h2>Servicios</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="assets/images/service1.svg" alt="Consulta General">
+                    <h3>Consulta General</h3>
+                    <p>Diagnóstico y tratamiento de diversas condiciones médicas con un enfoque preventivo y personalizado.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/images/service2.svg" alt="Atención Preventiva">
+                    <h3>Atención Preventiva</h3>
+                    <p>Programas de salud diseñados para mantener tu bienestar y prevenir enfermedades.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/images/service3.svg" alt="Consulta Virtual">
+                    <h3>Consulta Virtual</h3>
+                    <p>Accede a atención médica desde la comodidad de tu hogar a través de nuestras consultas en línea.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de testimonios -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"La Dra. Corniel me brindó una atención excepcional. Es profesional, dedicada y siempre me sentí en buenas manos."</p>
+                    <span>- Paciente Satisfecho</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"La mejor atención médica que he recibido. La Dra. [Tu Nombre] realmente se preocupa por sus pacientes."</p>
+                    <span>- Otro Paciente Feliz</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de llamada a la acción -->
+    <section class="cta">
+        <div class="container">
+            <h2>Cuida de tu salud con nosotros</h2>
+            <a href="appointments.html" class="btn-primary">Agenda tu Consulta Ahora</a>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Dra. Corniel. Todos los derechos reservados.</p>
+                <nav>
+                    <ul>
+                        <li><a href="privacy-policy.html">Política de Privacidad</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Aquí puedes agregar JavaScript si lo necesitas
+        // Ejemplo: mensaje de bienvenida en la consola
+        console.log("Bienvenido/a al sitio web de la Dra. [Tu Nombre]");
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Dra. [Tu Nombre]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        header .logo h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #005f73;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .contact-section {
+            padding: 60px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5em;
+            color: #007f91;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            background-color: #94d2bd;
+            color: #ffffff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em;
+        }
+
+        .contact-form button:hover {
+            background-color: #007f91;
+        }
+
+        .contact-info {
+            background-color: #edf6f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: #007f91;
+            font-size: 1.5em;
+        }
+
+        .contact-info p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p strong {
+            color: #333;
+        }
+
+        .map {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 40px;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer nav ul {
+            display: flex;
+        }
+
+        footer nav ul li {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con navegación -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Dra. Corniel</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Mí</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="appointments.html" class="btn-primary">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Contacto -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Contáctame</h2>
+            <div class="contact-grid">
+                <!-- Formulario de contacto -->
+                <div class="contact-form">
+                    <form action="submit_form.php" method="POST">
+                        <input type="text" name="name" placeholder="Tu Nombre" required>
+                        <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+                        <input type="text" name="subject" placeholder="Asunto" required>
+                        <textarea name="message" placeholder="Mensaje" required></textarea>
+                        <button type="submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <!-- Información de contacto -->
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p><strong>Teléfono:</strong> +1 (809) 438-9885</p>
+                    <p><strong>Email:</strong> info@tuconsulta.com</p>
+                    <p><strong>Dirección:</strong> Calle Principal, 123, Ciudad, País</p>
+                    <!-- Mapa -->
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.8468955045964!2d-122.08385158468433!3d37.386051779830975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5a6f8f0ed3b%3A0xb08f76cbaad8e169!2sGoogleplex!5e0!3m2!1ses-419!2sni!4v1617588831810!5m2!1ses-419!2sni" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Dra. [Tu Nombre]. Todos los derechos reservados.</p>
+                <nav>
+                    <ul>
+                        <li><a href="privacy-policy.html">Política de Privacidad</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

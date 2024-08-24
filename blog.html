@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Dra. [Tu Nombre]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        header .logo h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #005f73;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .blog-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .blog-section h2 {
+            font-size: 2.5em;
+            color: #007f91;
+            margin-bottom: 40px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .blog-item {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .blog-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .blog-content h3 {
+            color: #007f91;
+            margin-bottom: 15px;
+        }
+
+        .blog-content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .blog-content a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #94d2bd;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .blog-content a:hover {
+            background-color: #007f91;
+        }
+
+        footer {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer nav ul {
+            display: flex;
+        }
+
+        footer nav ul li {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con navegación -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Dra. Corniel</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Mí</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="appointments.html" class="btn-primary">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Blog -->
+    <section class="blog-section">
+        <div class="container">
+            <h2>Últimos Artículos</h2>
+            <div class="blog-grid">
+                <div class="blog-item">
+                    <img src="assets/images/blog1.jpg" alt="Título del Artículo 1">
+                    <div class="blog-content">
+                        <h3>Título del Artículo 1</h3>
+                        <p>Resumen o introducción del artículo 1 que brinda una idea sobre el contenido...</p>
+                        <a href="post1.html">Leer más</a>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <img src="assets/images/blog2.jpg" alt="Título del Artículo 2">
+                    <div class="blog-content">
+                        <h3>Título del Artículo 2</h3>
+                        <p>Resumen o introducción del artículo 2 que brinda una idea sobre el contenido...</p>
+                        <a href="post2.html">Leer más</a>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <img src="assets/images/blog3.jpg" alt="Título del Artículo 3">
+                    <div class="blog-content">
+                        <h3>Título del Artículo 3</h3>
+                        <p>Resumen o introducción del artículo 3 que brinda una idea sobre el contenido...</p>
+                        <a href="post3.html">Leer más</a>
+                    </div>
+                </div>
+                <!-- Puedes añadir más artículos aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Dra. Corniel. Todos los derechos reservados.</p>
+                <nav>
+                    <ul>
+                        <li><a href="privacy-policy.html">Política de Privacidad</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

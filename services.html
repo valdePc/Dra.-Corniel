@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Dra. [Tu Nombre]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        header .logo h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #005f73;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .services-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 2.5em;
+            color: #007f91;
+            margin-bottom: 40px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-item img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            color: #007f91;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer nav ul {
+            display: flex;
+        }
+
+        footer nav ul li {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con navegación -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Dra. Corniel</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Mí</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="appointments.html" class="btn-primary">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Servicios -->
+    <section class="services-section">
+        <div class="container">
+            <h2>Servicios</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="assets/images/service1.svg" alt="Consulta General">
+                    <h3>Consulta General</h3>
+                    <p>Ofrecemos diagnósticos y tratamientos personalizados para diversas condiciones médicas, centrados en tu bienestar integral.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/images/service2.svg" alt="Atención Preventiva">
+                    <h3>Atención Preventiva</h3>
+                    <p>Programe evaluaciones regulares para prevenir enfermedades y mantener una salud óptima a lo largo del tiempo.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/images/service3.svg" alt="Consulta Virtual">
+                    <h3>Consulta Virtual</h3>
+                    <p>Accede a atención médica desde la comodidad de tu hogar con nuestras consultas en línea, seguras y confiables.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/images/service4.svg" alt="Nutrición y Dietética">
+                    <h3>Nutrición y Dietética</h3>
+                    <p>Planificación y asesoramiento dietético personalizado para mantener una alimentación saludable y equilibrada.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/images/service5.svg" alt="Salud Mental">
+                    <h3>Salud Mental</h3>
+                    <p>Servicios de salud mental enfocados en tu bienestar emocional y psicológico, con un enfoque integral y personalizado.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/images/service6.svg" alt="Asesoramiento Genético">
+                    <h3>Asesoramiento Genético</h3>
+                    <p>Obtén orientación sobre pruebas genéticas y su impacto en tu salud, con asesoramiento profesional y ético.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Dra. [Tu Nombre]. Todos los derechos reservados.</p>
+                <nav>
+                    <ul>
+                        <li><a href="privacy-policy.html">Política de Privacidad</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

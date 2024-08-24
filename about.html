@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Dra. [Tu Nombre]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        header .logo h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #005f73;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .about-section {
+            background-color: #edf6f9;
+            padding: 60px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.5em;
+            color: #007f91;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #555;
+            padding: 0 20px;
+        }
+
+        .about-section .about-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 40px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-section .btn-primary {
+            background-color: #94d2bd;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .about-section .btn-primary:hover {
+            background-color: #007f91;
+        }
+
+        footer {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer nav ul {
+            display: flex;
+        }
+
+        footer nav ul li {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con navegación -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Dra. Corniel</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Mí</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="appointments.html" class="btn-primary">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección "Sobre Mí" -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-image">
+                <img src="assets/images/doctor.jpg" alt="Dra. [Tu Nombre]">
+            </div>
+            <h2>Sobre Mí</h2>
+            <p>Soy la Dra. Carmen Corniel, con más de 15 años de experiencia en el campo de [Tu Especialidad]. Mi misión es brindar una atención médica personalizada, basada en la confianza, el respeto y el conocimiento profundo de la salud de mis pacientes. A lo largo de mi carrera, he tenido el privilegio de ayudar a cientos de personas a mejorar su bienestar y calidad de vida.</p>
+            <p>Me especializo en [Especialidades o Servicios Destacados], y mi enfoque se centra en la prevención y el tratamiento eficaz de enfermedades, siempre considerando al paciente como un ser integral.</p>
+            <a href="contact.html" class="btn-primary">Contacta Conmigo</a>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Dra. [Tu Nombre]. Todos los derechos reservados.</p>
+                <nav>
+                    <ul>
+                        <li><a href="privacy-policy.html">Política de Privacidad</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Aquí puedes agregar JavaScript si lo necesitas
+    </script>
+</body>
+</html>
