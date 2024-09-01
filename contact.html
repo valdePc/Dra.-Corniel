@@ -21,6 +21,9 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            border-color: blue;
+            box-shadow: 0 0 10px rgba(0, 169, 181, 0.5);
+          
         }
 
         /* Estilos del Menú Moderno */
@@ -31,6 +34,8 @@
             top: 0;
             z-index: 1000;
             padding: 10px 0;
+            
+            
         }
 
         .logo {
@@ -336,8 +341,8 @@
                 </div>
                 <ul id="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="about.html">Sobre Mí</a></li>
                     <li><a href="services.html">Servicios</a></li>
+                    <li><a href="about.html">Sobre Mí</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contacto</a></li>
                     <li><a href="appointments.html" class="btn-primary">Agendar Cita</a></li>
@@ -353,11 +358,11 @@
             <div class="contact-grid">
                 <!-- Formulario de contacto -->
                 <div class="contact-form">
-                    <form action="submit_form.php" method="POST">
-                        <input type="text" name="name" placeholder="Tu Nombre" required>
-                        <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
-                        <input type="text" name="subject" placeholder="Asunto" required>
-                        <textarea name="message" placeholder="Mensaje" required></textarea>
+                    <form id="contactForm">
+                        <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
+                        <input type="email" id="email" name="email" placeholder="Tu Correo Electrónico" required>
+                        <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+                        <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
                         <button type="submit">Enviar Mensaje</button>
                     </form>
                 </div>
@@ -391,14 +396,52 @@
         </div>
     </footer>
 
+    <!-- JavaScript para enviar datos a Airtable -->
     <script>
-        // JavaScript para manejar el menú móvil
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            const accessToken = 'patKNIDU8EKmRBvtm.06e6f81b87af643146f4d58cf259daedadf47302b073341aac28ce66eb641e38';
+            const baseId = 'appCovpUwFjJlquFo';
+             const tableName = 'Reprogramar';
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const url = `https://api.airtable.com/v0/${baseId}/${tableName}`;
+            const data = {
+                fields: {
+                    Nombre: name,
+                    Correo: email,
+                    Asunto: subject,
+                    Mensaje: message
+                }
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${accessToken}`
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => { throw err; });
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert('Mensaje enviado exitosamente.');
+                document.getElementById('contactForm').reset();
+            })
+            .catch(error => {
+                console.error('Error al enviar el mensaje:', error);
+                alert('Error al enviar el mensaje: ' + JSON.stringify(error));
+            });
         });
     </script>
 </body>

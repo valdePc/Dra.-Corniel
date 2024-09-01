@@ -30,6 +30,8 @@
             top: 0;
             z-index: 1000;
             padding: 10px 0;
+            border-color: blue;
+            box-shadow: 0 0 10px rgba(0, 169, 181, 0.5);
         }
 
         .logo {
@@ -86,39 +88,6 @@
 
         nav ul li a:hover::before {
             width: 100%;
-        }
-
-        /* Efecto desplegable */
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #ffffff;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            padding: 10px 0;
-            border-radius: 10px;
-        }
-
-        nav ul li:hover ul {
-            display: block;
-        }
-
-        nav ul li ul li {
-            margin-left: 0;
-            width: 200px;
-            padding: 10px 20px;
-        }
-
-        nav ul li ul li a {
-            padding: 10px;
-            font-weight: 400;
-            color: #555;
-        }
-
-        nav ul li ul li a:hover {
-            color: #007f91;
-            background-color: #f4f4f9;
         }
 
         /* Botón de menú para móviles */
@@ -262,11 +231,6 @@
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .service-item img {
-            width: 80px;
-            margin-bottom: 20px;
-        }
-
         .service-item h3 {
             color: #007f91;
             margin-bottom: 15px;
@@ -305,7 +269,7 @@
 
         .testimonial-list {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
 
@@ -335,7 +299,7 @@
         }
 
         .add-testimonial {
-            margin-top: 50px;
+            margin-bottom: 50px;
             text-align: center;
         }
 
@@ -347,6 +311,14 @@
             margin-bottom: 15px;
             border-radius: 5px;
             border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra agregada */
+            transition: box-shadow 0.3s ease; /* Transición para un efecto más suave */
+        }
+
+        .add-testimonial input:focus,
+        .add-testimonial textarea:focus {
+            box-shadow: 0 4px 8px rgba(0, 169, 181, 0.5); /* Sombra al enfocar */
+            outline: none;
         }
 
         .add-testimonial button {
@@ -357,10 +329,26 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto; /* Centrado del botón */
         }
 
         .add-testimonial button:hover {
             background-color: #007f91;
+        }
+
+        .select-testimonial {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .select-testimonial select {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
         }
 
         /* Estilos de la sección de llamada a la acción */
@@ -431,8 +419,8 @@
                 </div>
                 <ul id="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="about.html">Sobre Mí</a></li>
                     <li><a href="services.html">Servicios</a></li>
+                    <li><a href="about.html">Sobre Mí</a></li>
                     <li>
                         <a href="#">Más</a>
                         <ul>
@@ -451,7 +439,7 @@
         <div class="container">
             <h2>Atención Médica Personalizada</h2>
             <p>Bienvenido/a a un lugar donde tu salud es nuestra prioridad. Ofrecemos atención médica integral con un enfoque humano y profesional.</p>
-            <a href="appointments.html" class="btn-primary">Reservar Cita</a>
+            <a href="appointments.html" class="btn-primary">Agendar Cita</a>
         </div>
     </section>
 
@@ -461,17 +449,14 @@
             <h2>Servicios</h2>
             <div class="service-grid">
                 <div class="service-item">
-                    <img src="assets/images/service1.svg" alt="Consulta General">
                     <h3>Consulta General</h3>
                     <p>Diagnóstico y tratamiento de diversas condiciones médicas con un enfoque preventivo y personalizado.</p>
                 </div>
                 <div class="service-item">
-                    <img src="assets/images/service2.svg" alt="Atención Preventiva">
                     <h3>Atención Preventiva</h3>
                     <p>Programas de salud diseñados para mantener tu bienestar y prevenir enfermedades.</p>
                 </div>
                 <div class="service-item">
-                    <img src="assets/images/service3.svg" alt="Consulta Virtual">
                     <h3>Consulta Virtual</h3>
                     <p>Accede a atención médica desde la comodidad de tu hogar a través de nuestras consultas en línea.</p>
                 </div>
@@ -483,28 +468,6 @@
     <section class="testimonials">
         <div class="container">
             <h2>Testimonios</h2>
-            <div class="testimonial-list">
-                <div class="testimonial-item">
-                    <p>"La Dra. Corniel me brindó una atención excepcional. Es profesional, dedicada y siempre me sentí en buenas manos."</p>
-                    <h3>Juan Pérez</h3>
-                    <span>Paciente</span>
-                </div>
-                <div class="testimonial-item">
-                    <p>"La mejor atención médica que he recibido. La Dra. Corniel realmente se preocupa por sus pacientes."</p>
-                    <h3>María López</h3>
-                    <span>Paciente</span>
-                </div>
-                <div class="testimonial-item">
-                    <p>"Recomiendo a la Dra. Corniel sin dudarlo, su enfoque es muy humano y profesional."</p>
-                    <h3>Carlos García</h3>
-                    <span>Paciente</span>
-                </div>
-                <div class="testimonial-item">
-                    <p>"Excelente trato y muy profesional. Me ayudó a mejorar mi salud significativamente."</p>
-                    <h3>Ana Torres</h3>
-                    <span>Paciente</span>
-                </div>
-            </div>
 
             <!-- Formulario para agregar un nuevo testimonio -->
             <div class="add-testimonial">
@@ -513,6 +476,19 @@
                 <input type="text" id="role" placeholder="Tu Rol (e.g., Paciente)" required>
                 <textarea id="message" placeholder="Escribe tu testimonio aquí..." required></textarea>
                 <button id="addTestimonial">Agregar Testimonio</button>
+            </div>
+
+            <!-- Sección para seleccionar y mostrar testimonios -->
+            <div class="select-testimonial">
+                <h3>Ver Testimonios</h3>
+                <select id="testimonialSelect">
+                    <option value="" disabled selected>Seleccione un nombre</option>
+                </select>
+                <div id="testimonialDisplay" style="display: none; margin-top: 20px;">
+                    <h3 id="selectedName"></h3>
+                    <span id="selectedRole"></span>
+                    <p id="selectedMessage"></p>
+                </div>
             </div>
         </div>
     </section>
@@ -557,20 +533,69 @@
             const message = document.getElementById('message').value;
 
             if (name && role && message) {
-                const newTestimonial = document.createElement('div');
-                newTestimonial.classList.add('testimonial-item');
-                newTestimonial.innerHTML = `
-                    <p>"${message}"</p>
-                    <h3>${name}</h3>
-                    <span>${role}</span>
-                `;
-                document.querySelector('.testimonial-list').appendChild(newTestimonial);
-                document.getElementById('name').value = '';
-                document.getElementById('role').value = '';
-                document.getElementById('message').value = '';
+                // Crear un nuevo objeto de testimonio para Airtable
+                const newTestimonial = {
+                    fields: {
+                        "Nombres": name,
+                        "Rol": role,
+                        "Testimonios": message
+                    }
+                };
+
+                const accessToken = 'patKNIDU8EKmRBvtm.06e6f81b87af643146f4d58cf259daedadf47302b073341aac28ce66eb641e38';
+                const baseId = 'appCovpUwFjJlquFo';
+                const tableName = 'Testimonios';
+
+                // Hacer la solicitud a la API de Airtable
+                fetch(`https://api.airtable.com/v0/${baseId}/${tableName}`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newTestimonial)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.id) { // Si la respuesta tiene un id, significa que se guardó correctamente
+                        console.log("Testimonio guardado en Airtable:", data);
+
+                        // Añadir la opción al selector
+                        const testimonialSelect = document.getElementById('testimonialSelect');
+                        const newOption = document.createElement('option');
+                        newOption.value = JSON.stringify(newTestimonial.fields); // Guardar el objeto como un string
+                        newOption.textContent = name;
+                        testimonialSelect.appendChild(newOption);
+
+                        // Limpiar los campos del formulario
+                        document.getElementById('name').value = '';
+                        document.getElementById('role').value = '';
+                        document.getElementById('message').value = '';
+
+                        alert('Testimonio agregado exitosamente.');
+                    } else {
+                        console.error("Error al guardar el testimonio:", data);
+                        alert('Hubo un problema al guardar el testimonio. Por favor, intente nuevamente.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al guardar el testimonio en Airtable:', error);
+                    alert('Error al guardar el testimonio. Verifique su conexión e intente nuevamente.');
+                });
             } else {
                 alert('Por favor, complete todos los campos antes de agregar un testimonio.');
             }
+        });
+
+        // Manejar la selección de un testimonio
+        document.getElementById('testimonialSelect').addEventListener('change', function() {
+            const selectedTestimonial = JSON.parse(this.value);
+            console.log("Testimonio seleccionado:", selectedTestimonial);
+            
+            document.getElementById('selectedName').textContent = selectedTestimonial.Nombres;
+            document.getElementById('selectedRole').textContent = selectedTestimonial.Rol;
+            document.getElementById('selectedMessage').textContent = `"${selectedTestimonial.Testimonios}"`;
+            document.getElementById('testimonialDisplay').style.display = 'block';
         });
     </script>
 </body>

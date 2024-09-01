@@ -15,7 +15,7 @@
             color: #333;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f8f9fa;
         }
 
         .container {
@@ -23,10 +23,11 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+           
         }
 
         header {
-            background-color: #ffffff;
+            background-color: #343a40; 
             padding: 20px 0;
             border-bottom: 1px solid #e0e0e0;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -38,7 +39,7 @@
         .logo {
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
-            color: #005f73;
+            color: #ffffff;
             font-size: 1.8em;
         }
 
@@ -63,7 +64,7 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #333;
+            color: #ffffff;
             font-weight: 600;
             padding: 10px;
             transition: color 0.3s ease;
@@ -99,7 +100,7 @@
 
         .menu-toggle span {
             height: 3px;
-            background-color: #333;
+            background-color: #ffffff;
             margin: 5px;
             border-radius: 3px;
             transition: all 0.3s ease;
@@ -158,7 +159,7 @@
 
         .appointment-section h2 {
             font-size: 2.5em;
-            color: #007f91;
+            color: #343a40;
             margin-bottom: 40px;
         }
 
@@ -176,15 +177,16 @@
 
         .widget input,
         .widget select {
-            width: 100%;
+            width: 95%;
             padding: 15px;
             border-radius: 5px;
             border: 1px solid #e0e0e0;
             font-family: 'Poppins', sans-serif;
             font-size: 1em;
-            background-color: #f4f4f9;
+            background-color: #f8f9fa;
             margin-bottom: 20px;
             color: #333;
+            border-color: blue;
         }
 
         .button-container {
@@ -192,7 +194,7 @@
         }
 
         .zoom-button {
-            background-color: #94d2bd;
+            background-color: #007f91;
             color: #ffffff;
             padding: 15px 20px;
             border: none;
@@ -206,7 +208,7 @@
         }
 
         .zoom-button:hover {
-            background-color: #007f91;
+            background-color: #005f73;
         }
 
         .details-section {
@@ -214,14 +216,15 @@
             margin-bottom: 30px;
         }
 
-        .details-section h3 {
+        /*tamaño del texto */
+        .details-section h3 {   
             font-size: 1.8em;
-            color: #007f91;
+            color: #343a40;
             margin-bottom: 20px;
         }
 
         .info-section {
-            background-color: #edf6f9;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -230,7 +233,7 @@
 
         .info-section h3 {
             font-size: 1.5em;
-            color: #007f91;
+            color: #343a40;
             margin-bottom: 20px;
         }
 
@@ -245,7 +248,7 @@
         }
 
         footer {
-            background-color: #ffffff;
+            background-color: #343a40;
             padding: 20px 0;
             border-top: 1px solid #e0e0e0;
             margin-top: 40px;
@@ -255,6 +258,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: #ffffff;
         }
 
         footer nav ul {
@@ -263,6 +267,10 @@
 
         footer nav ul li {
             margin-left: 20px;
+        }
+
+        footer nav ul li a {
+            color: #ffffff;
         }
     </style>
 </head>
@@ -281,11 +289,11 @@
                 </div>
                 <ul id="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="about.html">Sobre Mí</a></li>
                     <li><a href="services.html">Servicios</a></li>
+                    <li><a href="about.html">Sobre Mí</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contacto</a></li>
-                    <li><a href="appointments.html" class="zoom-button">Agendar Cita</a></li>
+                    <li><a href="appointments.html" class="zoom-button">Agendar cita</a></li>
                 </ul>
             </nav>
         </div>
@@ -294,59 +302,56 @@
     <!-- Sección Mi Cita -->
     <section class="appointment-section">
         <div class="container">
-            <h2>Mi Cita</h2>
-
-            <!-- Campo para ingresar el nombre del usuario -->
-            <div class="widget">
-                <label for="userName">Ingresa tu Nombre:</label>
-                <input type="text" id="userName" placeholder="Tu Nombre">
-                <button id="loadAppointment" class="zoom-button">Cargar Detalles</button>
-            </div>
-
-            <!-- Botón de Zoom -->
-            <div class="button-container">
-                <a href="https://zoom.us/j/tu_zoom_id" target="_blank" class="zoom-button">Ir a Sala de Zoom</a>
-            </div>
+            <h2>Agendar</h2>
 
             <!-- Detalles de la Cita -->
             <div class="details-section">
-                <h3>Detalles de la Cita</h3>
+                <h3>Complete el siguiente formulario.</h3>
                 <div class="widget">
-                    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="Nombre" required />
                 </div>
                 <div class="widget">
-                    <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" required />
                 </div>
                 <div class="widget">
-                    <p><strong>Servicio:</strong> <span id="servicio"></span></p>
+                    <label for="servicio">Servicio:</label>
+                    <input type="text" id="servicio" placeholder="Servicio" required />
                 </div>
                 <div class="widget">
-                    <p><strong>Duración:</strong> <span id="duracion"></span></p>
+                    <label for="duracion">Duración:</label>
+                    <input type="text" id="duracion" placeholder="Duración" required />
                 </div>
+                <div class="widget">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" placeholder="Dirección" required />
+                </div>
+                <div class="widget">
+                    <label for="telefono">Número de Teléfono:</label>
+                    <input type="tel" id="telefono" placeholder="Número de Teléfono" required pattern="[0-9]{10}" />
+                </div>
+                <div class="widget">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" placeholder="Correo Electrónico" />
+                </div>
+
+                <!-- Comprobante de Pago -->
+                <div class="widget">
+                    <label for="comprobante">Subir Comprobante de Pago:</label>
+                    <input type="file" id="comprobante" accept="image/*,.pdf" required />
+                </div>
+                <div class="widget">
+                    <label for="referencia">Número de Referencia de la Transacción:</label>
+                    <input type="text" id="referencia" placeholder="Número de Referencia" required />
+                </div>
+                
             </div>
 
-            <!-- Selección de Pago -->
-            <div class="details-section">
-                <h3>Opciones de Pago</h3>
-                <div class="widget">
-                    <label for="paymentMethod">Selecciona tu banco:</label>
-                    <select id="paymentMethod" onchange="redirectToBank()">
-                        <option value="">Selecciona una opción</option>
-                        <option
-                            value="https://www.popularenlinea.com/Personas/BancaDigital/BancaEnLinea/Paginas/Transferencias.aspx">
-                            Banco Popular</option>
-                        <option
-                            value="https://www.banreservas.com.do/personas/canales/banreservas-en-linea/transferencias">
-                            BanReservas</option>
-                        <option value="https://www.bhdleon.com.do/personas/canales-digitales/bhdleon-virtual">Banco
-                            BHD</option>
-                    </select>
-                </div>
-                <div class="widget">
-                    <label for="transactionId">Número de Transacción:</label>
-                    <input type="text" id="transactionId" placeholder="Ingresa el número de transacción">
-                </div>
-                <button id="confirmPayment" class="zoom-button">Confirmar Pago</button>
+           
+            <!-- Botón para Guardar o Agendar la Cita -->
+            <div class="button-container">
+                <button id="saveAppointment" class="zoom-button">Guardar Cita</button>
             </div>
 
             <!-- Información Adicional -->
@@ -373,59 +378,118 @@
                 </nav>
             </div>
         </div>
+    
+        
     </footer>
 
-    <!-- JavaScript para obtener datos de Airtable y manejar el pago -->
+    <!-- JavaScript para obtener y guardar datos en Airtable -->
     <script>
-        document.getElementById('loadAppointment').addEventListener('click', function () {
-            const apiKey = 'tu_api_key_de_airtable';
-            const baseId = 'tu_base_id_de_airtable';
-            const tableName = 'Nombre_de_tu_tabla';
+document.getElementById('saveAppointment').addEventListener('click', function () {
+    const accessToken = 'patKNIDU8EKmRBvtm.06e6f81b87af643146f4d58cf259daedadf47302b073341aac28ce66eb641e38';
+    const baseId = 'appCovpUwFjJlquFo';
+    const tableName = 'Detalles de la cita';
 
-            const userName = document.getElementById('userName').value; // Obteniendo el nombre del usuario ingresado
-            const url = `https://api.airtable.com/v0/${baseId}/${tableName}?filterByFormula=Nombre="${userName}"`;
+    // Recoger los valores de los campos
+    const nombre = document.getElementById('nombre').value;
+    const fecha = document.getElementById('fecha').value;
+    const servicio = document.getElementById('servicio').value;
+    const duracion = document.getElementById('duracion').value;
+    const direccion = document.getElementById('direccion').value;
+    const telefono = document.getElementById('telefono').value;
+    const correo = document.getElementById('correo').value;
+    const referencia = document.getElementById('referencia').value; // Nuevo campo para la referencia
 
-            fetch(url, {
-                headers: {
-                    Authorization: `Bearer ${apiKey}`
+    // Validar el número de transferencia
+    const isReferenciaValida = validarNumeroTransferencia(referencia);
+
+    if (!nombre || !fecha || !servicio || !duracion || !direccion || !telefono || !isReferenciaValida) {
+        alert('Por favor, complete todos los campos obligatorios y asegúrese de que el número de transferencia sea válido.');
+        return;
+    }
+
+    // Verificar si ya existe un registro con el mismo número de referencia
+    verificarDuplicado(referencia, accessToken, baseId, tableName)
+    .then(duplicado => {
+        if (duplicado) {
+            alert('Este número de referencia ya ha sido utilizado. Por favor, ingrese un número de referencia único.');
+        } else {
+            // Crear objeto de datos para enviar a Airtable
+            const data = {
+                fields: {
+                    Nombre: nombre,
+                    Fecha: fecha,
+                    Servicio: servicio,
+                    Duracion: duracion,
+                    Direccion: direccion,
+                    Telefono: telefono,
+                    Correo: correo,
+                    Referencia: referencia, // Guardar la referencia en Airtable
                 }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.records.length > 0) {
-                        const record = data.records[0].fields;
-                        document.getElementById('nombre').textContent = record.Nombre;
-                        document.getElementById('fecha').textContent = record.Fecha;
-                        document.getElementById('servicio').textContent = record.Servicio;
-                        document.getElementById('duracion').textContent = record.Duracion;
-                    } else {
-                        alert('No se encontraron citas para el usuario especificado.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error al obtener los datos de Airtable:', error);
-                });
-        });
+            };
 
-        function redirectToBank() {
-            const paymentMethod = document.getElementById('paymentMethod').value;
-            if (paymentMethod) {
-                window.open(paymentMethod, '_blank');
-            }
+            // Enviar los datos a Airtable
+            enviarDatosAirtable(data, accessToken, baseId, tableName);
         }
+    })
+    .catch(error => {
+        console.error('Error al verificar duplicado:', error);
+        alert('Error al verificar el número de referencia. Intente nuevamente.');
+    });
+});
 
-        document.getElementById('confirmPayment').addEventListener('click', function () {
-            const transactionId = document.getElementById('transactionId').value;
+function validarNumeroTransferencia(referencia) {
+    // Validar que el número tenga solo dígitos y tenga entre 10 y 15 dígitos (ajusta según tu necesidad)
+    const regex = /^[0-9]{10,15}$/;
+    return regex.test(referencia);
+}
 
-            if (!transactionId) {
-                alert('Por favor, ingresa el número de transacción.');
-                return;
-            }
+function verificarDuplicado(referencia, accessToken, baseId, tableName) {
+    const url = `https://api.airtable.com/v0/${baseId}/${tableName}?filterByFormula={Referencia}="${referencia}"`;
 
-            alert('Pago confirmado exitosamente. Tu cita ha sido reservada.');
-            // Aquí puedes agregar la lógica para guardar la información de la cita como confirmada
-        });
-    </script>
+    return fetch(url, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${accessToken}`
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(err => { throw err; });
+        }
+        return response.json();
+    })
+    .then(data => {
+        return data.records.length > 0; // Devuelve true si ya existe un registro con la referencia
+    });
+}
+
+function enviarDatosAirtable(data, accessToken, baseId, tableName) {
+    const url = `https://api.airtable.com/v0/${baseId}/${tableName}`;
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(err => { throw err; });
+        }
+        return response.json();
+    })
+    .then(data => {
+        alert('Cita guardada exitosamente, Una vez se lalide su pago, resivira un correo o un mensaje atravez del numero proporcionado, con su fecha seleccionada.');
+    })
+    .catch(error => {
+        console.error('Error al guardar la cita en Airtable:', error);
+        alert('Error al guardar la cita: ' + error.message);
+    });
+}
+
+   </script>
 </body>
 
 </html>
