@@ -90,6 +90,39 @@
             width: 100%;
         }
 
+        /* Ocultar submenú hasta que se haga clic en "Más" */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+            border-radius: 10px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            margin-left: 0;
+            width: 200px;
+            padding: 10px 20px;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            font-weight: 400;
+            color: #555;
+        }
+
+        nav ul li ul li a:hover {
+            color: #007f91;
+            background-color: #f4f4f9;
+        }
+
         /* Botón de menú para móviles */
         .menu-toggle {
             display: none;
@@ -423,7 +456,7 @@
                     <li><a href="about.html">Sobre Mí</a></li>
                     <li>
                         <a href="#">Más</a>
-                        <ul>
+                        <ul id="more-menu">
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contacto</a></li>
                         </ul>
